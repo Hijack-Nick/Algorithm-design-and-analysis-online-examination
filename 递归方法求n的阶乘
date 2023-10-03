@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+int JC(int a)
+{
+	if(a<=1)
+	{
+		return 1;
+	}else
+	{
+		return a*JC(a-1);
+	}
+}
+int main()
+{
+	int x=0;
+	cin >> x;
+	cout << JC(x);
+	return 0;
+}
