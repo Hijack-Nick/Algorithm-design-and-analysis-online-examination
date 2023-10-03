@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int FB(int a)
+{
+	if(a==0)
+	{
+		return 0;
+	}else if(a==1 || a==2)
+	{
+		return 1;
+	}else
+	{
+		return (FB(a-1)+FB(a-2));
+	}
+}
+int main()
+{
+	int x=0;
+	cin >> x;
+	cout << FB(x);
+	return 0;
+}
