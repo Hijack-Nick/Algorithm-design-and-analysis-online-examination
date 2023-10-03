@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+void Hannoi(int,char,char,char);
+int main()
+{
+	int n;
+	cin>>n;
+	Hannoi(n,'A','B','C');
+	return 0;
+} 
+void Move(int i,char M,char N)
+{   //打印：把第i层塔从M位置移动到N位置
+	cout<<i<<' '<<M<<' '<<N<<endl;  
+}
+void Hannoi(int n,char W1,char W2,char W3)
+{
+	if(n==1)
+	{//如果只有一个圆盘，则直接从A移动到B
+		Move(1,W1,W2);
+		return;
+	}
+	n--;
+	Hannoi(n,W1,W3,W2);//考虑A上面的n-1个圆盘是怎么从A移动到C的
+	Move(n+1,W1,W2);//第n个从A到B（此处的n+1就是n，前面做了n--）
+	Hannoi(n,W3,W2,W1);//考虑C上面的n-1个圆盘怎么从C移动到B上（此处的n就是n-1，前面做了n--）
+}
+
+
+/*
+#include<iostream>
+using namespace std;
+void Hanoi(int n,char a,char b,char c)
+{
+	if(n>0)
+	{
+		Hanoi(n-1,a,c,b);
+		//cout << n << a""
+		
+	}
+}
+int main()
+{
+	
+}*/
